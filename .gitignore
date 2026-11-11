@@ -1,0 +1,29 @@
+# Data
+data/raw/
+data/interim/
+data/processed/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Jupyter
+*.ipynb_checkpoints
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Secrets
+.env
+*.key
+
+# Build
+dist/
+build/
+*.egg-info/
