@@ -3,12 +3,11 @@
 ## Phase 0 — Dataset Exploration and Audit (COMPLETED)
 - Notebook + audit report created.
 
-## Phase 1 — Data Understanding and Preparation (NEXT)
-- Data dictionary, canonical schema, validation rules.
-- Equivalence of variables across farms.
-- Missing values, timestamps, event identification.
-- Evaluation labels, temporal windows, feature engineering strategy.
-- Temporal train/val/test splits, generalization strategy.
+## Phase 1 — Data Understanding and Preparation (IN PROGRESS)
+- Data dictionary, canonical schema, validation rules created.
+- Variable equivalence analysis (preliminary).
+- Missing values and temporal splits strategy documented.
+- Next: build per-sensor equivalence table, profile all files, define cutoffs.
 
 ## Phase 2 — Machine Learning and Anomaly Detection
 - Statistical baselines, Isolation Forest, (optional) LOF, One-Class SVM, Autoencoder.
