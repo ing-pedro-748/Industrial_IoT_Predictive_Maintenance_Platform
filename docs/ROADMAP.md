@@ -30,8 +30,12 @@
 - End-to-end demo notebook (no Kafka).
 - Next: Spark Structured Streaming, inference integration, checkpoints.
 
-## Phase 5 — Orchestration and Data Warehouse
-- Airflow DAGs, Snowflake model (facts/dimensions), data marts, SQL KPIs.
+## Phase 5 - Orchestration and Data Warehouse (IN PROGRESS)
+- Airflow DAGs (batch + training).
+- Snowflake DDL and KPI queries.
+- Local warehouse helper (DuckDB).
+- Notebook 11 (KPIs).
+- Next: connect to Snowflake, Power BI.
 
 ## Phase 6 — MLOps and Model Serving (IN PROGRESS)
 - MLflow tracking integrated (sqlite backend).
