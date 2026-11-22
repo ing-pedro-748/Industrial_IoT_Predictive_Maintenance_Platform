@@ -1,0 +1,174 @@
+sensor_name,statistics_type,description,unit,is_angle,is_counter,farm,category
+sensor_23,average,Averaged current in phase 1,A,False,False,A,current
+sensor_24,average,Averaged current in phase 2,A,False,False,A,current
+sensor_25,average,Averaged current in phase 3,A,False,False,A,current
+sensor_16,"maximum,minimum,average,std_dev",RMS current L1,A,False,False,B,current
+sensor_17,"average,maximum,minimum,std_dev",RMS current L2,A,False,False,B,current
+sensor_18,"average,minimum,std_dev,maximum",RMS current L3,A,False,False,B,current
+sensor_27,"maximum,minimum,std_dev,average",Current,A,False,False,B,current
+sensor_28,"std_dev,minimum,average,maximum",Motor current axis 1,A,False,False,B,current
+sensor_29,"average,minimum,std_dev,maximum",Motor current axis 2,A,False,False,B,current
+sensor_30,"maximum,std_dev,minimum,average",Motor current axis 3,A,False,False,B,current
+sensor_12,"average,maximum,minimum,std_dev",Battery discharge current axis 1,A,False,False,C,current
+sensor_13,"average,maximum,minimum,std_dev",Battery discharge current axis 2,A,False,False,C,current
+sensor_14,"average,minimum,std_dev,maximum",Battery discharge current axis 3,A,False,False,C,current
+sensor_22,"average,maximum,minimum,std_dev",Current hydraulic tank heating,A,False,False,C,current
+sensor_23,"average,maximum,minimum,std_dev",Current water cooler pump 1,A,False,False,C,current
+sensor_24,"average,maximum,minimum,std_dev",Current water cooler pump 2,A,False,False,C,current
+sensor_25,"average,maximum,minimum,std_dev",Current drain 24V nacelle,A,False,False,C,current
+sensor_27,"average,std_dev,maximum,minimum",Current yaw motor A,A,False,False,C,current
+sensor_28,"average,maximum,minimum,std_dev",Current yaw motor B,A,False,False,C,current
+sensor_29,"average,maximum,minimum,std_dev",Current yaw motor C,A,False,False,C,current
+sensor_30,"average,maximum,std_dev,minimum",Current yaw motor D,A,False,False,C,current
+sensor_31,"average,maximum,minimum,std_dev",Current yaw motor E,A,False,False,C,current
+sensor_32,"average,maximum,minimum,std_dev",Current yaw motor F,A,False,False,C,current
+sensor_33,"average,maximum,minimum,std_dev",Current yaw motor G,A,False,False,C,current
+sensor_34,"average,minimum,std_dev,maximum",Current yaw motor H,A,False,False,C,current
+sensor_66,"average,maximum,std_dev,minimum",Internal consumption current L1,A,False,False,C,current
+sensor_67,"average,maximum,minimum,std_dev",Internal consumption current L2,A,False,False,C,current
+sensor_68,"average,maximum,std_dev,minimum",Internal consumption current L3,A,False,False,C,current
+sensor_77,"average,maximum,std_dev,minimum",Motor current generator cooler 1,A,False,False,C,current
+sensor_78,"average,maximum,minimum,std_dev",Motor current generator cooler 2,A,False,False,C,current
+sensor_79,"average,maximum,minimum,std_dev",Motor current generator cooler 3,A,False,False,C,current
+sensor_80,"average,maximum,minimum,std_dev",Motor current generator cooler 4,A,False,False,C,current
+sensor_81,"average,maximum,minimum,std_dev",Motor current hydraulic pump A,A,False,False,C,current
+sensor_82,"average,maximum,minimum,std_dev",Motor current hydraulic pump B,A,False,False,C,current
+sensor_83,"average,maximum,minimum,std_dev",Motor current water cooler fan 1,A,False,False,C,current
+sensor_84,"average,maximum,minimum,std_dev",Motor current water cooler fan 2,A,False,False,C,current
+sensor_85,"average,maximum,minimum,std_dev",Motor current water cooler fan 3,A,False,False,C,current
+sensor_86,"average,maximum,minimum,std_dev",Motor current water cooler fan 4,A,False,False,C,current
+sensor_87,"average,maximum,minimum,std_dev",Motor current gear oil pump A,A,False,False,C,current
+sensor_88,"average,maximum,minimum,std_dev",Motor current gear oil pump B,A,False,False,C,current
+sensor_89,"average,maximum,minimum,std_dev",Motor current gear oil pump C,A,False,False,C,current
+sensor_127,"average,maximum,minimum,std_dev",RMS current phase 1 HV grid,A,False,False,C,current
+sensor_128,"average,maximum,minimum,std_dev",RMS current phase 2 HV grid,A,False,False,C,current
+sensor_129,"average,maximum,std_dev,minimum",RMS current phase 3 HV grid,A,False,False,C,current
+sensor_130,"average,maximum,std_dev,minimum",Generator RMS current L1,A,False,False,C,current
+sensor_131,"average,maximum,minimum,std_dev",Generator RMS current L2,A,False,False,C,current
+sensor_132,"maximum,minimum,std_dev,average",Generator RMS current L3,A,False,False,C,current
+sensor_133,"average,maximum,minimum,std_dev",RMS line to line current axis 1,A,False,False,C,current
+sensor_134,"average,maximum,minimum,std_dev",RMS line to line current axis 2,A,False,False,C,current
+sensor_135,"maximum,average,minimum,std_dev",RMS line to line current axis 3,A,False,False,C,current
+sensor_7,"std_dev,maximum,minimum,average",Cable load,%,False,False,B,other
+sensor_44,"average,maximum,minimum,std_dev",Fluid level oil container A1,%,False,False,C,other
+sensor_45,"maximum,minimum,std_dev,average",Fluid level oil container A2,%,False,False,C,other
+sensor_106,"average,maximum,minimum,std_dev",RM position bypass valve gearbox radiator,%,False,False,C,other
+sensor_211,"maximum,minimum,average,std_dev",Trigger bypass valve gearbox,%,False,False,C,other
+sensor_26,average,Grid frequency,Hz,False,False,A,other
+sensor_23,"minimum,average,maximum,std_dev",Grid frequency,Hz,False,False,B,other
+sensor_47,"average,maximum,minimum,std_dev",Mains frequency OS-side,Hz,False,False,C,other
+sensor_42,average,Nacelle direction,�,True,False,A,other
+sensor_21,"minimum,maximum,std_dev,average",Nacelle direction,�,True,False,B,other
+sensor_5,"maximum,minimum,std_dev,average",Pitch angle,�,True,False,A,pitch
+sensor_10,"maximum,std_dev,average,minimum",Pitch angle,�,True,False,B,pitch
+power_29,"maximum,std_dev,average,minimum",Possible grid active power,kW,False,False,A,power
+power_30,"maximum,std_dev,minimum,average",Grid power,kW,False,False,A,power
+power_58,"maximum,minimum,average,std_dev",Available power,kW,False,False,B,power
+power_62,"minimum,std_dev,maximum,average",Active power,kW,False,False,B,power
+power_2,"average,maximum,std_dev,minimum",ABB-LS Active Power,kW,False,False,C,power
+power_5,"average,maximum,minimum,std_dev",Active power grid side converter,kW,False,False,C,power
+power_6,"average,maximum,minimum,std_dev",Active power HV grid,kW,False,False,C,power
+power_17,"average,minimum,std_dev,maximum",Active power converter,kW,False,False,C,power
+sensor_69,"average,maximum,minimum,std_dev",Internal consumption power L2,kW,False,False,C,power
+sensor_70,"average,maximum,std_dev,minimum",Internal consumption power L3,kW,False,False,C,power
+sensor_108,"average,maximum,minimum,std_dev",Internal consumption power L1,kW,False,False,C,power
+reactive_power_11,"average,std_dev,maximum,minimum",Reactive power,kvar,False,False,B,power
+sensor_75,"average,maximum,std_dev,minimum",Maximum reactive power HV converter,kvar,False,False,C,power
+reactive_power_119,"maximum,minimum,std_dev,average",ABB-LS Reactive Power,kvar,False,False,C,power
+reactive_power_120,"average,std_dev,maximum,minimum",Reactive power converter,kvar,False,False,C,power
+reactive_power_121,"maximum,std_dev,average,minimum",Reactive power GS converter,kvar,False,False,C,power
+reactive_power_122,"maximum,std_dev,average,minimum",Reactive power HV grid,kvar,False,False,C,power
+sensor_18,"maximum,minimum,average,std_dev",Generator rpm in latest period,rpm,False,False,A,rotation
+sensor_52,"minimum,average,std_dev,maximum",Rotor rpm,rpm,False,False,A,rotation
+sensor_20,"std_dev,maximum,minimum,average",Gearbox rotational speed,rpm,False,False,B,rotation
+sensor_25,"average,maximum,minimum,std_dev",Rotor speed,rpm,False,False,B,rotation
+sensor_0,average,Ambient temperature,�C,False,False,A,temperature
+sensor_6,average,Temperature in the hub controller,�C,False,False,A,temperature
+sensor_7,average,Temperature in the top nacelle controller,�C,False,False,A,temperature
+sensor_8,average,Temperature in the choke coils on the VCS-section,�C,False,False,A,temperature
+sensor_9,average,Temperature on the VCP-board,�C,False,False,A,temperature
+sensor_10,average,Temperature in the VCS cooling water,�C,False,False,A,temperature
+sensor_11,average,Temperature in gearbox bearing on high speed shaft,�C,False,False,A,temperature
+sensor_12,average,Temperature oil in gearbox,�C,False,False,A,temperature
+sensor_13,average,Temperature in generator bearing 2 (Drive End),�C,False,False,A,temperature
+sensor_14,average,Temperature in generator bearing 1 (Non-Drive End),�C,False,False,A,temperature
+sensor_15,average,Temperature inside generator in stator windings phase 1,�C,False,False,A,temperature
+sensor_16,average,Temperature inside generator in stator windings phase 2,�C,False,False,A,temperature
+sensor_17,average,Temperature inside generator in stator windings phase 3,�C,False,False,A,temperature
+sensor_19,average,Temperature in the split ring chamber,�C,False,False,A,temperature
+sensor_20,average,Temperature in the busbar section,�C,False,False,A,temperature
+sensor_21,average,Temperature measured by the IGBT-driver on the grid side inverter,�C,False,False,A,temperature
+sensor_35,average,Temperature measured by the IGBT-driver on the rotor side inverter phase1,�C,False,False,A,temperature
+sensor_36,average,Temperature measured by the IGBT-driver on the rotor side inverter phase2,�C,False,False,A,temperature
+sensor_37,average,Temperature measured by the IGBT-driver on the rotor side inverter phase3,�C,False,False,A,temperature
+sensor_38,average,Temperature in HV transformer phase L1,�C,False,False,A,temperature
+sensor_39,average,Temperature in HV transformer phase L2,�C,False,False,A,temperature
+sensor_40,average,Temperature in HV transformer phase L3,�C,False,False,A,temperature
+sensor_41,average,Temperature oil in hydraulic group,�C,False,False,A,temperature
+sensor_43,average,Nacelle temperature,�C,False,False,A,temperature
+sensor_53,average,Temperature in the nose cone,�C,False,False,A,temperature
+sensor_8,"maximum,average,minimum,std_dev",Outside temperature,�C,False,False,B,temperature
+sensor_22,"std_dev,maximum,minimum,average",Hub temperature,�C,False,False,B,temperature
+sensor_31,"average,minimum,std_dev,maximum",Temperature internal consumption transformer,�C,False,False,B,temperature
+sensor_32,"average,maximum,minimum,std_dev",Generator bearing temperature 1,�C,False,False,B,temperature
+sensor_33,"average,maximum,minimum,std_dev",Generator bearing temperature 2,�C,False,False,B,temperature
+sensor_34,"average,maximum,std_dev,minimum",Gearbox bearing temperature 1,�C,False,False,B,temperature
+sensor_35,"minimum,std_dev,average,maximum",Gearbox bearing temperature 2,�C,False,False,B,temperature
+sensor_36,"minimum,std_dev,maximum,average",Gearbox bearing temperature 3,�C,False,False,B,temperature
+sensor_37,"minimum,maximum,std_dev,average",Gearbox bearing temperature 4,�C,False,False,B,temperature
+sensor_38,"maximum,minimum,std_dev,average",Gearbox oil inlet temperature,�C,False,False,B,temperature
+sensor_39,"average,maximum,minimum,std_dev",Gearbox oil tank temperature,�C,False,False,B,temperature
+sensor_40,"minimum,std_dev,average,maximum",Transformator core temperature,�C,False,False,B,temperature
+sensor_41,"average,std_dev,maximum,minimum",Transformer L1 (mid-voltage) temperature ,�C,False,False,B,temperature
+sensor_42,"maximum,minimum,std_dev,average",Transformer L1 (undervoltage) temperature ,�C,False,False,B,temperature
+sensor_43,"maximum,average,minimum,std_dev",Transformer L2 (mid-voltage) temperature ,�C,False,False,B,temperature
+sensor_44,"maximum,average,minimum,std_dev",Transformer L2 (undervoltage) temperature ,�C,False,False,B,temperature
+sensor_45,"average,maximum,minimum,std_dev",Transformer L3 (mid-voltage) temperature ,�C,False,False,B,temperature
+sensor_46,"std_dev,average,maximum,minimum",Transformer L3 (undervoltage) temperature ,�C,False,False,B,temperature
+sensor_47,"maximum,minimum,std_dev,average",Transformer cell temperature,�C,False,False,B,temperature
+sensor_48,"maximum,std_dev,average,minimum",Motor temperature axis 1,�C,False,False,B,temperature
+sensor_49,"average,minimum,maximum,std_dev",Motor temperature axis 2,�C,False,False,B,temperature
+sensor_50,"std_dev,maximum,minimum,average",Motor temperature axis 3,�C,False,False,B,temperature
+sensor_51,"average,std_dev,maximum,minimum",Rotor bearing temperature 1,�C,False,False,B,temperature
+sensor_52,"maximum,minimum,std_dev,average",Rotor bearing temperature 2,�C,False,False,B,temperature
+sensor_53,"maximum,minimum,average,std_dev",Slip ring temperature Generator,�C,False,False,B,temperature
+sensor_32,average,Averaged voltage in phase 1,V,False,False,A,voltage
+sensor_33,average,Averaged voltage in phase 2,V,False,False,A,voltage
+sensor_34,average,Averaged voltage in phase 3,V,False,False,A,voltage
+sensor_13,"std_dev,average,maximum,minimum",RMS voltage L1,V,False,False,B,voltage
+sensor_14,"maximum,std_dev,average,minimum",RMS voltage L2,V,False,False,B,voltage
+sensor_15,"average,std_dev,maximum,minimum",RMS voltage L3,V,False,False,B,voltage
+sensor_24,"average,maximum,minimum,std_dev",Grid voltage,V,False,False,B,voltage
+sensor_35,"maximum,std_dev,average,minimum",DC link voltage converter,V,False,False,C,voltage
+sensor_71,"average,maximum,std_dev,minimum",Internal consumption voltage L1,V,False,False,C,voltage
+sensor_72,"average,maximum,std_dev,minimum",Internal consumption voltage L2,V,False,False,C,voltage
+sensor_73,"average,maximum,std_dev,minimum",Internal consumption voltage L3,V,False,False,C,voltage
+sensor_136,"average,minimum,maximum,std_dev",Generator RMS voltage L1-L2,V,False,False,C,voltage
+sensor_137,"average,maximum,std_dev,minimum",Generator RMS voltage L2-L3,V,False,False,C,voltage
+sensor_138,"average,maximum,minimum,std_dev",Generator RMS voltage L3-L1,V,False,False,C,voltage
+sensor_139,"maximum,std_dev,minimum,average",RMS voltage phase 1 HV grid,V,False,False,C,voltage
+sensor_140,"average,maximum,minimum,std_dev",RMS voltage phase 2 HV grid,V,False,False,C,voltage
+sensor_141,"average,maximum,minimum,std_dev",RMS voltage phase 3 HV grid,V,False,False,C,voltage
+sensor_214,"maximum,average,minimum,std_dev",Axis 1 voltage 1 battery 100%,V,False,False,C,voltage
+sensor_215,"maximum,average,minimum,std_dev",Axis 2 Voltage 1 battery 100%,V,False,False,C,voltage
+sensor_216,"maximum,std_dev,minimum,average",Axis 3 Voltage 1 battery 100%,V,False,False,C,voltage
+sensor_217,"maximum,std_dev,average,minimum",Voltage 24 VDC hub,V,False,False,C,voltage
+sensor_218,"maximum,std_dev,minimum,average",Voltage 24 VDC nacelle,V,False,False,C,voltage
+sensor_219,"maximum,std_dev,average,minimum",Axis 1 Voltage 2 Battery 100%,V,False,False,C,voltage
+sensor_220,"maximum,std_dev,minimum,average",Axis 2 Voltage 2 Battery 100%,V,False,False,C,voltage
+sensor_221,"maximum,std_dev,average,minimum",Axis 3 voltage 2 battery 100%,V,False,False,C,voltage
+sensor_222,"average,maximum,minimum,std_dev",Axis 1 Voltage battery 50%,V,False,False,C,voltage
+sensor_223,"average,maximum,minimum,std_dev",Axis 2 Voltage battery 50%,V,False,False,C,voltage
+sensor_224,"average,maximum,minimum,std_dev",Axis 3 Voltage battery 50%,V,False,False,C,voltage
+wind_speed_3,"maximum,minimum,average,std_dev",Windspeed,m/s,False,False,A,wind
+wind_speed_4,average,Estimated windspeed,m/s,False,False,A,wind
+sensor_6,"average,minimum,std_dev,maximum",Wind speed anemometer 2 calculated,m/s,False,False,B,wind
+wind_speed_59,"average,maximum,minimum,std_dev",Wind speed 1,m/s,False,False,B,wind
+wind_speed_60,"average,minimum,maximum,std_dev",Wind speed 2,m/s,False,False,B,wind
+wind_speed_61,"minimum,average,maximum,std_dev",Wind speed,m/s,False,False,B,wind
+wind_speed_235,"average,maximum,minimum,std_dev",Wind speed 1,m/s,False,False,C,wind
+wind_speed_236,"average,maximum,minimum,std_dev",Wind speed 1+2,m/s,False,False,C,wind
+wind_speed_237,"average,minimum,std_dev,maximum",Wind speed 2,m/s,False,False,C,wind
+sensor_1,average,Wind absolute direction,�,True,False,A,wind
+sensor_2,average,Wind relative direction,�,True,False,A,wind
+sensor_4,"average,maximum,minimum,std_dev",Absolute wind direction,�,True,False,B,wind
