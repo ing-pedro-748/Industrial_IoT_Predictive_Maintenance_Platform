@@ -23,7 +23,7 @@ Thumbs.db
 .env
 *.key
 
-# Build
-dist/
-build/
-*.egg-info/
+# MLflow
+mlruns/
+mlflow.db
+*.db

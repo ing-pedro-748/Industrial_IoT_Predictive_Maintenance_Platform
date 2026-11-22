@@ -1,0 +1,4 @@
+farm,precision,recall,f1,false_alarms_per_day,event_detection_rate
+A,0.401,0.7556,0.5157,17.602,1.0
+B,0.4105,0.5201,0.4546,61.9838,1.0
+C,0.3265,0.6557,0.4095,37.0979,1.0

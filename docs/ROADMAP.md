@@ -10,9 +10,12 @@
 - Next: build per-sensor equivalence table, profile all files, define cutoffs.
 
 ## Phase 2 — Machine Learning and Anomaly Detection (IN PROGRESS)
-- Statistical baseline (Z-score) implemented and evaluated on Farm A.
-- Threshold sweep and per-event results in reports/baseline_results.csv.
-- Next: Isolation Forest, window features, cross-turbine evaluation, MLflow.
+- Statistical baseline (Z-score) and Isolation Forest implemented.
+- LOTO evaluation (raw + rolling features) across Farms A/B/C.
+- Refined feature sets per farm.
+- Threshold calibration (F1 and cost-aware).
+- Cross-farm summary report.
+- Next: MLflow tracking (Phase 6) and further feature engineering.
 
 ## Phase 3 — Data Engineering and Data Lake
 - Spark batch pipelines, schema validation, Medallion layers, Parquet, partitioning, DQ checks.
@@ -23,8 +26,10 @@
 ## Phase 5 — Orchestration and Data Warehouse
 - Airflow DAGs, Snowflake model (facts/dimensions), data marts, SQL KPIs.
 
-## Phase 6 — MLOps and Model Serving
-- MLflow registry, FastAPI, prediction logging, API tests, monitoring.
+## Phase 6 — MLOps and Model Serving (IN PROGRESS)
+- MLflow tracking integrated (sqlite backend).
+- Experiment logging for LOTO results across farms.
+- Next: model registry, FastAPI serving, prediction logging.
 
 ## Phase 7 — Analytics and Dashboard
 - Power BI dashboards connected to Snowflake.
