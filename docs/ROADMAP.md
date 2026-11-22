@@ -17,8 +17,11 @@
 - Cross-farm summary report.
 - Next: MLflow tracking (Phase 6) and further feature engineering.
 
-## Phase 3 — Data Engineering and Data Lake
-- Spark batch pipelines, schema validation, Medallion layers, Parquet, partitioning, DQ checks.
+## Phase 3 - Data Engineering and Data Lake (IN PROGRESS)
+- Spark batch pipeline (Bronze/Silver/Gold) implemented for Farm A.
+- Parquet storage, partitioned by asset_id.
+- Environment setup documented (Java 17, Hadoop winutils).
+- Next: extend to Farms B/C, add DQ checks, rolling features in Gold.
 
 ## Phase 4 — IoT Streaming Pipeline
 - Python sensor simulator, Kafka, Spark Structured Streaming, windows, late data, checkpoints, inference integration.
