@@ -23,8 +23,12 @@
 - Environment setup documented (Java 17, Hadoop winutils).
 - Next: extend to Farms B/C, add DQ checks, rolling features in Gold.
 
-## Phase 4 — IoT Streaming Pipeline
-- Python sensor simulator, Kafka, Spark Structured Streaming, windows, late data, checkpoints, inference integration.
+## Phase 4 - IoT Streaming Pipeline (IN PROGRESS)
+- Python sensor simulator with event_time/ingestion_time.
+- Window aggregator (sliding windows per turbine).
+- Kafka helpers and docker-compose for broker.
+- End-to-end demo notebook (no Kafka).
+- Next: Spark Structured Streaming, inference integration, checkpoints.
 
 ## Phase 5 — Orchestration and Data Warehouse
 - Airflow DAGs, Snowflake model (facts/dimensions), data marts, SQL KPIs.
