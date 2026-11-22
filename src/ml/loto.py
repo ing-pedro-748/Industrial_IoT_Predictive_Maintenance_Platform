@@ -12,13 +12,18 @@ from src.ml.isolation_forest import train_iforest, predict_iforest
 from src.features.rolling import add_rolling_features, rolling_feature_names
 
 
-def load_farm_series(source: DatasetSource, farm: str, event_info: pd.DataFrame) -> pd.DataFrame:
+def load_farm_series(source: DatasetSource, farm: str, event_info: pd.DataFrame, feature_cols=None) -> pd.DataFrame:
     frames = []
     for _, ev in event_info.iterrows():
         eid = int(ev["event_id"])
         asset = int(ev["asset"] if "asset" in ev else ev["asset_id"])
         rel = f"Wind Farm {farm}/datasets/{eid}.csv"
         df = source.read_csv(rel, sep=";")
+        keep = ["time_stamp", "asset_id", "train_test", "status_type_id", "id"]
+        if feature_cols:
+            keep = list(dict.fromkeys(keep + list(feature_cols)))
+        keep = [c for c in keep if c in df.columns]
+        df = df[keep]
         df["time_stamp"] = pd.to_datetime(df["time_stamp"])
         df["event_id"] = eid
         df["asset_id"] = asset
@@ -65,7 +70,7 @@ def event_detection_rate(pred_df, event_info):
     return {"event_detection_rate": rate, "n_events": len(events), "n_detected": detected, "avg_lead_time_min": avg_lead}
 
 
-def calibrate_zscore(train_data, feature_cols, val_fraction=0.2, candidates=None):
+def calibrate_zscore(train_data, feature_cols, val_fraction=0.2, candidates=None, mode='f1', min_recall=0.5):
     if candidates is None:
         candidates = [1.5, 2.0, 2.5, 3.0, 3.5, 4.0]
     # time-based split
@@ -75,13 +80,33 @@ def calibrate_zscore(train_data, feature_cols, val_fraction=0.2, candidates=None
     va = train_data[train_data["time_stamp"] > cutoff]
     means, stds = zscore_fit(tr, feature_cols)
     va_pred = zscore_predict(va.copy(), means, stds, feature_cols, 0)
-    best_thr, best_f1 = candidates[0], -1
+    from sklearn.metrics import f1_score, recall_score
+    best_thr, best_score = candidates[0], -1
     for thr in candidates:
         yp = (va_pred["anomaly_score"] > thr).astype(int)
-        from sklearn.metrics import f1_score
+        rec = recall_score(va["is_anomaly"].values, yp.values, zero_division=0)
         f1 = f1_score(va["is_anomaly"].values, yp.values, zero_division=0)
-        if f1 > best_f1:
-            best_f1, best_thr = f1, thr
+        # false alarms per day
+        fp = int(((va["is_anomaly"].values==0)&(yp.values==1)).sum())
+        days = (va["time_stamp"].max()-va["time_stamp"].min()).total_seconds()/86400.0
+        fad = fp/days if days>0 else float('inf')
+        if mode == 'cost':
+            if rec >= min_recall and fad < best_score if best_score != -1 else True:
+                # minimize false alarms subject to recall constraint
+                if best_score == -1 or fad < best_score:
+                    best_score, best_thr = fad, thr
+            # if no feasible, fall back to best f1
+        else:
+            if f1 > best_score:
+                best_score, best_thr = f1, thr
+    if mode == 'cost' and best_score == -1:
+        # fallback: best f1
+        best_thr, best_score = candidates[0], -1
+        for thr in candidates:
+            yp = (va_pred["anomaly_score"] > thr).astype(int)
+            f1 = f1_score(va["is_anomaly"].values, yp.values, zero_division=0)
+            if f1 > best_score:
+                best_score, best_thr = f1, thr
     return best_thr, means, stds
 
 
@@ -107,7 +132,7 @@ def calibrate_iforest(train_data, feature_cols, contamination, val_fraction=0.2,
     return model, best_thr
 
 
-def loto_fold(all_df, feature_cols, test_asset, event_info, use_rolling, windows, calibrate, z_threshold, if_contaminations):
+def loto_fold(all_df, feature_cols, test_asset, event_info, use_rolling, windows, calibrate, z_threshold, if_contaminations, calibrate_mode='f1'):
     train_df = all_df[all_df["asset_id"] != test_asset]
     test_df = all_df[all_df["asset_id"] == test_asset]
     train_mask = train_df["train_test"] == "train"
@@ -119,7 +144,7 @@ def loto_fold(all_df, feature_cols, test_asset, event_info, use_rolling, windows
 
     # Z-score
     if calibrate:
-        thr, means, stds = calibrate_zscore(train_data, feature_cols)
+        thr, means, stds = calibrate_zscore(train_data, feature_cols, mode=calibrate_mode)
     else:
         means, stds = zscore_fit(train_data, feature_cols)
         thr = z_threshold
@@ -152,8 +177,8 @@ def loto_fold(all_df, feature_cols, test_asset, event_info, use_rolling, windows
     return results
 
 
-def run_loto(source, farm, feature_cols, event_info, use_rolling=False, windows=(6, 36), calibrate=False, if_contaminations=(0.05, 0.10, 0.15), z_threshold=2.0):
-    all_df = load_farm_series(source, farm, event_info)
+def run_loto(source, farm, feature_cols, event_info, use_rolling=False, windows=(6, 36), calibrate=False, calibrate_mode='f1', if_contaminations=(0.05, 0.10, 0.15), z_threshold=2.0):
+    all_df = load_farm_series(source, farm, event_info, feature_cols=feature_cols)
     if use_rolling:
         all_df = add_rolling_features(all_df, feature_cols, windows=windows)
         feature_cols = rolling_feature_names(feature_cols, windows)
@@ -162,6 +187,6 @@ def run_loto(source, farm, feature_cols, event_info, use_rolling=False, windows=
     all_results = []
     for asset in assets:
         print(f"Fold test_asset={asset}")
-        res = loto_fold(all_df, feature_cols, int(asset), event_info, use_rolling, windows, calibrate, z_threshold, list(if_contaminations))
+        res = loto_fold(all_df, feature_cols, int(asset), event_info, use_rolling, windows, calibrate, z_threshold, list(if_contaminations), calibrate_mode)
         all_results.extend(res)
     return pd.DataFrame(all_results)
