@@ -9,10 +9,10 @@
 - Missing values and temporal splits strategy documented.
 - Next: build per-sensor equivalence table, profile all files, define cutoffs.
 
-## Phase 2 — Machine Learning and Anomaly Detection
-- Statistical baselines, Isolation Forest, (optional) LOF, One-Class SVM, Autoencoder.
-- Threshold tuning, false alarms, detection lead time.
-- MLflow tracking, model selection report.
+## Phase 2 — Machine Learning and Anomaly Detection (IN PROGRESS)
+- Statistical baseline (Z-score) implemented and evaluated on Farm A.
+- Threshold sweep and per-event results in reports/baseline_results.csv.
+- Next: Isolation Forest, window features, cross-turbine evaluation, MLflow.
 
 ## Phase 3 — Data Engineering and Data Lake
 - Spark batch pipelines, schema validation, Medallion layers, Parquet, partitioning, DQ checks.
